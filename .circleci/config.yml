@@ -1,41 +1,23 @@
 version: 2.1
-
-
-jobs:
-  job-param:
-    
-
-    machine: true
+commands: # a reusable command with parameters
+  greeting:
     parameters:
-      ADMIN_URL:
+      to:
+        default: "world"
         type: string
-        default: 'ADMIN_URL'
-
-      CLIENT_URL:
-        type: string
-        default: 'CLIENT_URL'
-
-      LENDER_URL:
-        type: string
-        default: 'LENDER_URL'
-
-      VENDOR_URL:
-        type: string
-        default: 'VENDOR_URL'
     steps:
-      - checkout
-      - run: |
-          echo <<parameters.ADMIN_URL>>  
-          echo <<parameters.CLIENT_URL>>
-          echo <<parameters.LENDER_URL>>
-          echo <<parameters.VENDOR_URL>>
-         
+      - run: echo "Hello <<parameters.to>>"
+jobs:
+  my-job:
+    docker:
+      - image: cimg/base:stable
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - greeting:
+          to: "My-Name"
 workflows:
-  build:
+  my-workflow:
     jobs:
-      - job-param:
-          VENDOR_URL: HELLO
-          LENDER_URL: BROTHER
-          CLIENT_URL: MOTHER
-          ADMIN_URL: BEKI
-    
+      - my-job
