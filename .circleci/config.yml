@@ -1,0 +1,35 @@
+version: 2
+
+
+jobs:
+  job-param:
+    
+
+    docker:
+      - image: circleci/terraform:latest
+    parameters:
+      ADMIN_URL:
+        type: string
+        default: 'ADMIN_URL'
+
+      CLIENT_URL:
+        type: string
+        default: 'CLIENT_URL'
+
+      LENDER_URL:
+        type: string
+        default: 'LENDER_URL'
+
+      VENDOR_URL:
+        type: string
+        default: 'VENDOR_URL'
+    steps:
+      - checkout
+      - run:
+          name: beki
+          command: echo <<parameters.ADMIN_URL>>
+workflows:
+  build:
+    jobs:
+      - job-param  
+    
