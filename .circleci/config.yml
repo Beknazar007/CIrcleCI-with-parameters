@@ -5,8 +5,9 @@ jobs:
   job-param:
     
 
-    docker:
-      - image: circleci/terraform:latest
+    machine: true
+      
+      
     parameters:
       ADMIN_URL:
         type: string
