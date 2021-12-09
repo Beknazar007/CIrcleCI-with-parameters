@@ -4,17 +4,17 @@ parameters:
         type: string
         default: 'ADMIN_URL'
 
-      CLIENT_URL:
-        type: string
-        default: 'CLIENT_URL'
+      # CLIENT_URL:
+      #   type: string
+      #   default: 'CLIENT_URL'
 
-      LENDER_URL:
-        type: string
-        default: 'LENDER_URL'
+      # LENDER_URL:
+      #   type: string
+      #   default: 'LENDER_URL'
 
-      VENDOR_URL:
-        type: string
-        default: 'VENDOR_URL'
+      # VENDOR_URL:
+      #   type: string
+      #   default: 'VENDOR_URL'
 
 jobs:
   job-param:
@@ -26,9 +26,9 @@ jobs:
       - checkout
       - run: |
           echo <<parameters.ADMIN_URL>>  
-          echo <<parameters.CLIENT_URL>>
-          echo <<parameters.LENDER_URL>>
-          echo <<parameters.VENDOR_URL>>
+          # echo <<parameters.CLIENT_URL>>
+          # echo <<parameters.LENDER_URL>>
+          # echo <<parameters.VENDOR_URL>>
          
 workflows:
   build:
