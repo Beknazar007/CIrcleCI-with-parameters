@@ -33,9 +33,5 @@ jobs:
 workflows:
   build:
     jobs:
-      - job-param:
-          VENDOR_URL: 
-          LENDER_URL: 
-          CLIENT_URL: 
-          ADMIN_URL: 
-    
+      - job-param
+          
