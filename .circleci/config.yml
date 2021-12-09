@@ -24,8 +24,7 @@ jobs:
     
     steps:
       - checkout
-      - run: |
-          echo <<parameters.ADMIN_URL>>  
+      - run: echo <<pipeline.parameters.ADMIN_URL>>  
         
          
 workflows:
