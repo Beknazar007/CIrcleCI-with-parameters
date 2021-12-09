@@ -1,12 +1,5 @@
 version: 2.1
-
-
-jobs:
-  job-param:
-    
-
-    machine: true
-    parameters:
+parameters:
       ADMIN_URL:
         type: string
         default: 'ADMIN_URL'
@@ -22,6 +15,13 @@ jobs:
       VENDOR_URL:
         type: string
         default: 'VENDOR_URL'
+
+jobs:
+  job-param:
+    
+
+    machine: true
+    
     steps:
       - checkout
       - run: |
@@ -34,8 +34,8 @@ workflows:
   build:
     jobs:
       - job-param:
-          VENDOR_URL: HELLO
-          LENDER_URL: BROTHER
-          CLIENT_URL: MOTHER
-          ADMIN_URL: BEKI
+          VENDOR_URL: 
+          LENDER_URL: 
+          CLIENT_URL: 
+          ADMIN_URL: 
     
