@@ -4,17 +4,17 @@ parameters:
         type: string
         default: 'ADMIN_URL'
 
-      # CLIENT_URL:
-      #   type: string
-      #   default: 'CLIENT_URL'
+      CLIENT_URL:
+        type: string
+        default: 'CLIENT_URL'
 
-      # LENDER_URL:
-      #   type: string
-      #   default: 'LENDER_URL'
+      LENDER_URL:
+        type: string
+        default: 'LENDER_URL'
 
-      # VENDOR_URL:
-      #   type: string
-      #   default: 'VENDOR_URL'
+      VENDOR_URL:
+        type: string
+        default: 'VENDOR_URL'
 
 jobs:
   job-param:
@@ -24,13 +24,14 @@ jobs:
     
     steps:
       - checkout
-      - run: echo <<pipeline.parameters.ADMIN_URL>>  
-        
+      - run: |
+          echo <<pipeline.parameters.ADMIN_URL>>  
+          echo <<pipeline.parameters.CLIENT_URL>>
+          echo <<pipeline.parameters.LENDER_URL>>
+          echo <<pipeline.parameters.VENDOR_URL>>
          
 workflows:
   build:
     jobs:
       - job-param
-   # echo <<parameters.CLIENT_URL>>
-          # echo <<parameters.LENDER_URL>>
-          # echo <<parameters.VENDOR_URL>>         
+            
