@@ -2,19 +2,19 @@ version: 2.1
 parameters:
       ADMIN_URL:
         type: string
-        
+        default: 'ADMIN_URL'
 
       CLIENT_URL:
         type: string
-        
+        default: 'CLIENT_URL'
 
       LENDER_URL:
         type: string
-        
+        default: 'LENDER_URL'
 
       VENDOR_URL:
         type: string
-        
+        default: 'VENDOR_URL'
 
 jobs:
   job-param:
