@@ -1,16 +1,35 @@
-version: 2.1
+version: 2
+
+
 jobs:
-  build:
+  job-param:
+    
+
+    docker:
+      - image: circleci/terraform:latest
     parameters:
-      p:
-        type: integer
-        default: 2
-    parallelism: << parameters.p >>
-    machine: true
+      ADMIN_URL:
+        type: string
+        default: 'ADMIN_URL'
+
+      CLIENT_URL:
+        type: string
+        default: 'CLIENT_URL'
+
+      LENDER_URL:
+        type: string
+        default: 'LENDER_URL'
+
+      VENDOR_URL:
+        type: string
+        default: 'VENDOR_URL'
     steps:
       - checkout
-      - run : echo << parameters.p >>
+      - run:
+          name: beki
+          command: echo <<parameters.ADMIN_URL>>
 workflows:
-  workflow:
+  build:
     jobs:
-      - build
+      - job-param 
+    
