@@ -4,7 +4,7 @@ jobs:
     parameters:
       p:
         type: integer
-        default: 1
+        
     parallelism: << parameters.p >>
     machine: true
     steps:
