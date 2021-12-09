@@ -33,5 +33,9 @@ jobs:
 workflows:
   build:
     jobs:
-      - job-param 
+      - job-param:
+          VENDOR_URL: HELLO
+          LENDER_URL: BROTHER
+          CLIENT_URL: MOTHER
+          ADMIN_URL: BEKI
     
