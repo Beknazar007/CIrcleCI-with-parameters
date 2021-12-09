@@ -6,8 +6,6 @@ jobs:
     
 
     machine: true
-      
-      
     parameters:
       ADMIN_URL:
         type: string
@@ -29,6 +27,15 @@ jobs:
       - run:
           name: beki
           command: echo <<parameters.ADMIN_URL>>
+      - run:
+          name: beki
+          command: echo <<parameters.CLIENT_URL>>
+      - run:
+          name: beki
+          command: echo <<parameters.LENDER_URL>>
+      - run:
+          name: beki
+          command: echo <<parameters.VENDOR_URL>>    
 workflows:
   build:
     jobs:
