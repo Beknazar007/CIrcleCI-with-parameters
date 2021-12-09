@@ -24,18 +24,11 @@ jobs:
         default: 'VENDOR_URL'
     steps:
       - checkout
-      - run:
-          name: beki
-          command: echo <<parameters.ADMIN_URL>>
-      - run:
-          name: beki
-          command: echo <<parameters.CLIENT_URL>>
-      - run:
-          name: beki
-          command: echo <<parameters.LENDER_URL>>
-      - run:
-          name: beki
-          command: echo <<parameters.VENDOR_URL>>    
+      - run: echo <<parameters.ADMIN_URL>>
+          
+      - run: echo <<parameters.CLIENT_URL>>
+      - run: echo <<parameters.LENDER_URL>>
+      - run: echo <<parameters.VENDOR_URL>>    
 workflows:
   build:
     jobs:
