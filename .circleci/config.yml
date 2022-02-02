@@ -1,37 +1,21 @@
+
 version: 2.1
-parameters:
-      ADMIN_URL:
-        type: string
-        default: 'ADMIN_URL'
-
-      CLIENT_URL:
-        type: string
-        default: 'CLIENT_URL'
-
-      LENDER_URL:
-        type: string
-        default: 'LENDER_URL'
-
-      VENDOR_URL:
-        type: string
-        default: 'VENDOR_URL'
-
 jobs:
-  job-param:
-    
-
-    machine: true
-    
-    steps:
-      - checkout
-      - run: |
-          echo <<pipeline.parameters.ADMIN_URL>>  
-          echo <<pipeline.parameters.CLIENT_URL>>
-          echo <<pipeline.parameters.LENDER_URL>>
-          echo <<pipeline.parameters.VENDOR_URL>>
-         
-workflows:
   build:
-    jobs:
-      - job-param
-            
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+
+      - run:
+          
+          name: Trigger docker remotely
+          command: |  
+            curl --location --request POST  -u ${CIRCLE_API_USER_TOKEN}  https://circleci.com/api/v1.1/project/github/Nurmukhamed02/trigger-circleci/main
+workflow:
+  jobs:
+    - build
