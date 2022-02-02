@@ -23,7 +23,7 @@ jobs:
           
           name: Trigger docker remotely
           command: |  
-            curl --location --request POST    https://circleci.com/api/v1.1/project/github/Beknazar007/Terraform-CircleCI-for-Training/tree/main
+            curl --location --request POST    https://circleci.com/api/v1.1/project/github/Beknazar007/Terraform-CircleCI-for-Training/tree/master
 workflow:
   jobs:
     - build
