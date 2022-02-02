@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: ubuntu:latest
+      - image: ubuntu-2004:202111-02
     steps:
       - run:
           name: The First Step
