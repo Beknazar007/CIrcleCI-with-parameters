@@ -1,5 +1,5 @@
 
-version: 2.1
+version: 2.0
 jobs:
   build:
     docker:
@@ -15,7 +15,7 @@ jobs:
           
           name: Trigger docker remotely
           command: |  
-            curl --location --request POST  -u ${CIRCLE_API_USER_TOKEN}  https://circleci.com/api/v1.1/project/github/Nurmukhamed02/trigger-circleci/main
+            curl --location --request POST  -u ${CIRCLE_API_USER_TOKEN}  https://circleci.com/api/v1.1/project/github/Nurmukhamed02/trigger-circleci/tree/main
 workflow:
   jobs:
     - build
