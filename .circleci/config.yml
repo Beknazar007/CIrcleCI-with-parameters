@@ -3,14 +3,14 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: ubuntu-2004:202111-02
+      - image: ubuntu:latest
     steps:
       - run:
           name: The First Step
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
-            apt install curl 
+            apt install curl -y
 
       - run:
           
