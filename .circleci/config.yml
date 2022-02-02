@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: ruby:2.4.0-jessie
     steps:
       - run:
           name: The First Step
