@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: ruby:2.4.0-jessie
+      - image: ubuntu:latest
     steps:
       - run:
           name: The First Step
